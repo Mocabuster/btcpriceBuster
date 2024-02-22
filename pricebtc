@@ -1,0 +1,9 @@
+import requests
+
+def get_btc_price():
+  """Gets the current price of Bitcoin in USD."""
+
+  url = "https://api.coindesk.com/v1/bpi/currentprice/USD.json"
+  response = requests.get(url)
+  data = response.json()
+  return data["bpi"]["USD"]["rate_float"]
